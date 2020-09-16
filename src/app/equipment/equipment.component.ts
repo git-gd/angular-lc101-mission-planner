@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipmentComponent implements OnInit {
 
-  itemBeingEdited: object = null;
+  itemBeingEdited: string = null;
 
   equipment: string[] = [
     'Habitat dome',
@@ -25,12 +25,11 @@ export class EquipmentComponent implements OnInit {
     this.equipment.push(newItem);
   }
 
-  edit(editItem: object) {
+  edit(editItem: string) {
     this.itemBeingEdited = editItem;
   }
 
   save(itemTxt: string, itemOld: string) {
-    alert(itemTxt + " " + itemOld)
     this.equipment[this.equipment.indexOf(itemOld)] = itemTxt;
     this.itemBeingEdited = null;
   }
